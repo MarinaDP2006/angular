@@ -1,0 +1,21 @@
+<div class="plan-card"
+     role="button"
+     tabindex="0"
+     (click)="onSelect()"
+     (keydown.enter)="onSelect()"
+     (keydown.space)="onSelect(); $event.preventDefault()">
+
+   <!-- Inicio del contenido de la tarjeta -->
+  <div class="plan-number">Plan #{{ index + 1 }}</div>
+  <h4 class="plan-title">{{ plan.title }}</h4>
+  <p class="plan-desc">{{ plan.description }}</p>
+  <div class="plan-meta">
+    <span class="category-badge category-{{plan.category}}">
+      {{ plan.category }}
+    </span>
+  </div>
+<!-- Fin de la sección principal, inicio del indicador de si es Online o No -->
+  <p class="plan-online" [class.plan-online-true]="plan.isOnline" [class.plan-online-false]="!plan.isOnline">
+    {{ plan.isOnline ? '🟢 Online' : '📍 Presencial' }}
+  </p>
+</div>

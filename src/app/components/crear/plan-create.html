@@ -1,0 +1,36 @@
+<h2>Crear nuevo plan</h2>
+<section>
+  <h1>Nuevo plan</h1>
+  <form [formGroup]="planForm" (ngSubmit)="onSubmit()">
+        <label>Título</label>
+    <input type="text" formControlName="title" />
+    <div *ngIf="planForm.get('title')?.invalid && planForm.get('title')?.touched">
+      <span *ngIf="planForm.get('title')?.errors?.['required']">
+        El título es obligatorio.
+      </span>
+      <span *ngIf="planForm.get('title')?.errors?.['minlength']">
+        El título debe tener al menos 3 caracteres.
+      </span>
+    </div>
+    <label>Descripción</label>
+    <textarea formControlName="description"></textarea>
+    <div *ngIf="planForm.get('description')?.invalid && planForm.get('description')?.touched">
+      <span *ngIf="planForm.get('description')?.errors?.['required']">
+        La descripción es obligatoria.
+      </span>
+    </div>
+    <label>Categoría</label>
+    <input type="text" formControlName="category" />
+    <div *ngIf="planForm.get('category')?.invalid && planForm.get('category')?.touched">
+      <span *ngIf="planForm.get('category')?.errors?.['required']">
+        La categoría es obligatoria.
+      </span>
+    </div>
+
+    <label>
+      <input type="checkbox" formControlName="isOnline" />
+      ¿Es online?
+    </label>
+    <button type="submit" [disabled]="planForm.invalid">Enviar</button>
+  </form>
+</section>

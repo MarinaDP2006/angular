@@ -1,0 +1,24 @@
+<!-- src/app/components/plan-list/plan-list.html -->
+<h3>Planes para este fin de semana</h3>
+<p *ngIf="plans.length === 0">No hay planes disponibles</p>
+
+<div class="plans-grid">
+  <div *ngFor="let plan of plans" class="plan-item">
+    <app-plan-card
+      [plan]="plan"
+      (click)="goToDetail(plan.id)">
+    </app-plan-card>
+
+    <!-- BOTONES EDITAR Y ELIMINAR -->
+    <div class="plan-actions mt-2">
+      <button class="btn btn-sm btn-warning me-2"
+              (click)="editPlan(plan.id); $event.stopPropagation()">
+        Editar
+      </button>
+      <button class="btn btn-sm btn-danger"
+              (click)="deletePlan(plan.id); $event.stopPropagation()">
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>

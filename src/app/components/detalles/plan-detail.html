@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Plan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-4" *ngIf="plan">
+        <h2>Detalle del Plan</h2>
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ plan.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ plan.category }}</h6>
+            <p class="card-text">{{ plan.description }}</p>
+            <p class="card-text">
+            <strong>Modalidad:</strong> {{ plan.isOnline ? 'Online' : 'Presencial' }}
+            </p>
+            <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

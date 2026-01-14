@@ -1,0 +1,66 @@
+/* Navbar styles: */
+:host {
+  display: block;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(90deg, #0d6efd 0%, #6610f2 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.12);
+  backdrop-filter: saturate(120%) blur(4px);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Si quieres estilizar el emoji por separado */
+.navbar h1 .brand-emoji {
+  font-size: 1.2rem;
+  transform: translateY(1px);
+}
+
+/* Links o botones dentro del navbar (por si se añaden) */
+.navbar a,
+.navbar button {
+  color: #ffffff;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  opacity: 0.92;
+}
+
+/* Estilo para estado activo si se añade navegación */
+.navbar .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Responsive: reducir padding y tamaño en pantallas pequeñas */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 0.6rem 0.75rem;
+  }
+  .navbar h1 {
+    font-size: 1rem;
+  }
+}

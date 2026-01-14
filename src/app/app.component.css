@@ -1,0 +1,225 @@
+/* Estilos globales */
+:host {
+  display: block;
+}
+
+body, :host, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f6fbfc;
+  color: #07204a;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 1.25rem auto;
+  padding: 1rem;
+}
+
+main.container {
+  background: #fff;
+  border-radius: 12px;
+  min-height: 60vh;
+  box-shadow: 0 10px 36px rgba(11,46,90,0.06);
+}
+
+/* Navbar fijo */
+nav.navbar { position: sticky; top: 0; z-index: 20; }
+
+/* Header */
+.page-header {
+  padding: 1.25rem 0.5rem;
+  background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(102,16,242,0.04));
+  border-bottom: 1px solid rgba(11,46,90,0.06);
+}
+.page-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  margin: 0;
+  font-size: 1.7rem;
+  color: #07204a;
+}
+.lead {
+  margin: 6px 0 0 0;
+  color: #375a7f;
+  font-size: 1rem;
+}
+.header-cta .btn {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.25);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.header-cta .btn:hover {
+  background: #0b5ed7;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.3);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.search {
+  flex: 1 1 360px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(11,46,90,0.12);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 0.9rem;
+}
+.search:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.1);
+}
+.filters { display: flex; gap: 0.5rem; }
+.btn-filter {
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(11,46,90,0.12);
+  background: #fff;
+  cursor: pointer;
+  color: #073567;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+.btn-filter.active {
+  background: rgba(13,110,253,0.10);
+  border-color: rgba(13,110,253,0.30);
+  color: #0b63d6;
+}
+.btn-filter:hover {
+  background: rgba(13,110,253,0.05);
+}
+
+/* Área de planes en cuadrícula */
+.plans-area {
+  padding: 0.5rem 0;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Mensaje cuando no hay planes */
+.no-plans-message {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Bloque de selección */
+.selected-plan-alert {
+  border: 2px solid #0d6efd;
+  background: linear-gradient(180deg, #f8fbff, #f1f7ff);
+  padding: 1.25rem;
+  border-radius: 10px;
+  color: #073567;
+  margin-top: 1.5rem;
+}
+
+.selected-plan-alert h5 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  color: #0b63d6;
+  font-weight: 600;
+}
+
+.selected-plan-alert strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #07204a;
+}
+
+.selected-plan-alert span {
+  color: #154d7a;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.selected-plan-alert .btn-clear {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #6c757d;
+  background: #fff;
+  color: #6c757d;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.selected-plan-alert .btn-clear:hover {
+  background: #6c757d;
+  color: #fff;
+}
+
+/* Footer */
+.page-footer {
+  background: #07204a;
+  color: #fff;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+.page-footer p {
+  margin: 0;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .page-header .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .search {
+    width: 100%;
+    flex: none;
+  }
+  .filters {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+    margin: 0.75rem auto;
+  }
+  .brand {
+    font-size: 1.4rem;
+  }
+  .lead {
+    font-size: 0.9rem;
+  }
+}

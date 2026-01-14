@@ -1,0 +1,27 @@
+<!-- src/app/app.component.html -->
+<app-navbar></app-navbar>
+
+<header class="page-header">
+  <div class="container header-inner">
+    <div>
+      <h1 class="brand">Planes de Fin de Semana</h1>
+      <p class="lead">Descubre y organiza tus planes para el fin de semana</p>
+    </div>
+    <div class="header-cta">
+      <button class="btn btn-primary" routerLink="/create">
+        Crear plan
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Aquí se cargarán las rutas -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="page-footer">
+  <div class="container text-center">
+    <p>© 2025 Planes de Fin de Semana. Salesianas.</p>
+  </div>
+</footer>
